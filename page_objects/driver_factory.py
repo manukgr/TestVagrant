@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options as chromeOptions
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-class DriverFactory():
+class DriverFactory:
 
     def __init__(self, browser='ff', browser_version=None, os_name=None):
         "Constructor for the Driver factory"
