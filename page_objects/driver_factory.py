@@ -8,7 +8,7 @@ NOTE: Change this class as you add support for:
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as chromeOptions
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
+import chromedriver_binary
 
 class DriverFactory:
 
@@ -31,7 +31,7 @@ class DriverFactory:
         """
         options = chromeOptions()
         options.add_argument("disable-infobars")
-        options.add_argument("--headless")  # For Headless chrome
+        #options.add_argument("--headless")  # For Headless chrome
         caps = DesiredCapabilities.CHROME
         local_driver = webdriver.Chrome(options=options, desired_capabilities=caps)
         return local_driver

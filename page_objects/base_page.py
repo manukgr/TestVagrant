@@ -28,4 +28,3 @@ class BasePage:
         :return:
         """
         self.driver.get(self.base_url+url)
-
