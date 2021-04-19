@@ -40,7 +40,7 @@ jobs:
           command: |
             . venv/bin/activate
             mkdir -p test-reports
-            python3 -m pytest -n 2 << parameters.location >>/*_tests.py --junitxml=test-reports/junit.xml  --html=test-reports/report.html
+            python3 -m pytest -n 2 << parameters.location >>/*_tests.py --junitxml=test-reports/junit.xml
       - store_test_results:
           path: test-reports
       - store_artifacts:
