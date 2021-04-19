@@ -60,3 +60,10 @@ Directory structure of our current Templates
         ├── conftest.py
         ├── README.md
         ├── requirement.txt
+
+## TODO
+1. Add support for other browsers
+2. Add Dynamic locators support
+3. More tests
+4. Autorun on Circle CI
+5. Using python magic methods
