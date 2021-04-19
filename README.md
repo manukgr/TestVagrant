@@ -63,8 +63,9 @@ Directory structure of our current Templates
 
 ## TODO
 1. Add support for other browsers
-2. Add Dynamic locators support
-3. More tests
-4. Autorun on Circle CI
-5. Using python magic methods
-6. Add allure report with screenshots and steps
+2. Add command line arguments support
+3. Add Dynamic locators support
+4. More tests
+5. Autorun on Circle CI : Done
+6. Using python magic methods
+7. Add allure report with screenshots and steps
