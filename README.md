@@ -67,3 +67,4 @@ Directory structure of our current Templates
 3. More tests
 4. Autorun on Circle CI
 5. Using python magic methods
+6. Add allure report with screenshots and steps

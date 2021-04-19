@@ -44,9 +44,6 @@ jobs:
       - store_test_results:
           path: test-reports
       - store_artifacts:
-          path: allure-report
-          destination: tr1
-      - store_artifacts:
           path: test-reports
 workflows:
   version: 2.1

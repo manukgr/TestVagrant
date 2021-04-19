@@ -25,9 +25,9 @@ class NdtvOpenWeatherTests(unittest.TestCase):
         self.ndtv_weather_page.get_element(self.ndtv_weather_page.city).click()
         self.assertTrue(self.ndtv_weather_page.get_element
                         (self.ndtv_weather_page.city_weather_info_on_map).is_displayed())
-        temp_api = int(weather_api.get_temperature("Chandigarh"))
+        temp_api = int(float(weather_api.get_temperature("Chandigarh")))
         temp_ui = self.ndtv_weather_page.get_element(self.ndtv_weather_page.city_weather_info_on_map).text
-        temp_ui = int(temp_ui.split('℃')[0])
+        temp_ui = int(float(temp_ui.split('℃')[0]))
         print(temp_api + temp_ui)
         self.assertLessEqual(abs(temp_ui-temp_api), variation.tolerable_degrees,
                              "Variation of temperatures is exceeding tolerable degrees")
