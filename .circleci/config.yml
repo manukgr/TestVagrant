@@ -13,7 +13,6 @@ jobs:
       FLASK_CONFIG: testing
     steps:
       - checkout
- 
       - run:
           name: Update Chrome
           command: |
