@@ -56,4 +56,4 @@ workflows:
           location: "tests/"
           filters:
             branches:
-              only: master
+              only: main
