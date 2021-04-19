@@ -5,4 +5,4 @@ pytest-xdist==2.2.1
 html-testRunner==1.2.1
 webdriver_manager==1.7
 chromedriver-binary==87.0.4280.88
-pytest-rerunfailures==6.0
+pytest-rerunfailures==9.1.1
