@@ -1,0 +1,60 @@
+version: 2.1
+jobs:
+  e2eTest:
+    parameters:
+      location:
+        description: "Tests directory"
+        default: "tests/"
+        type: string
+    docker:
+      - image: circleci/python:3.6.5-browsers
+    working_directory: ~/repo
+    environment:
+      FLASK_CONFIG: testing
+    steps:
+      - checkout
+ 
+      - run:
+          name: Update Chrome
+          command: |
+            set -ex
+            google-chrome --version
+            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+            sudo apt-get update
+            sudo apt-get --only-upgrade install google-chrome-stable
+            google-chrome --version
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - run:
+          name: Install Python deps in a venv
+          command: |
+            pwd
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - "venv"
+      - run:
+          command: |
+            . venv/bin/activate
+            mkdir -p test-reports
+            python3 -m pytest -n 2 << parameters.location >>/*_tests.py --junitxml=test-reports/junit.xml  --html=test-reports/report.html
+      - store_test_results:
+          path: test-reports
+      - store_artifacts:
+          path: allure-report
+          destination: tr1
+      - store_artifacts:
+          path: test-reports
+workflows:
+  version: 2.1
+  run_e2e_tests:
+    jobs:
+      - e2eTest:
+          location: "tests/"
+          filters:
+            branches:
+              only: master

@@ -34,7 +34,7 @@ e) Get setup with your browser driver. If you don't know how to, please try:
 
 __If your setup goes well__, you should be able to run a simple test with this command:
 
-`python -m pytest -n {concurrent_tests} {test_class_path} -k {test_case_name}`
+`python3 -m pytest -n {concurrent_tests} {test_class_path} -k {test_case_name}`
 
 -------------------
 Framework Structure
