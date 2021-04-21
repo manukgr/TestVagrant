@@ -36,6 +36,14 @@ __If your setup goes well__, you should be able to run a simple test with this c
 
 `python3 -m pytest -n {concurrent_tests} {test_class_path} -k {test_case_name}`
 
+Example 
+
+`` python3 -m pytest -n 2 tests/ --browser chrome --headless y --junitxml=test-reports/junit.xml``
+
+CI/CD
+
+Framework is already setup with Circle CI
+Please check .circleci directory for the config and steps
 -------------------
 Framework Structure
 -------------------
@@ -62,10 +70,7 @@ Directory structure of our current Templates
         ├── requirement.txt
 
 ## TODO
-1. Add support for other browsers : Done
-2. Add command line arguments support: Done
-3. Add Dynamic locators support
-4. More tests
-5. Autorun on Circle CI : Done
-6. Using python magic methods
-7. Add allure report with screenshots and steps
+1. Add Dynamic locators support
+2. More tests
+3. Using python magic methods
+4. Add allure report with screenshots and steps
