@@ -43,14 +43,13 @@ class BasePage(Borg, unittest.TestCase):
         """Overwrite this method in your Page module if you want to visit a specific URL"""
         pass
 
-    def register_driver(self, browser, browser_version):
+    def register_driver(self, browser_version):
         """
         Register Driver for various browsers based on command line arguments
-        :param browser:
         :param browser_version:
         :return:
         """
-        self.driver = self.driver_obj.get_web_driver(browser, browser_version)
+        self.driver = self.driver_obj.get_web_driver(browser_version)
 
     def open(self, url):
         """
