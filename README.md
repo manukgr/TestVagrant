@@ -62,8 +62,8 @@ Directory structure of our current Templates
         ├── requirement.txt
 
 ## TODO
-1. Add support for other browsers
-2. Add command line arguments support
+1. Add support for other browsers : Done
+2. Add command line arguments support: Done
 3. Add Dynamic locators support
 4. More tests
 5. Autorun on Circle CI : Done
