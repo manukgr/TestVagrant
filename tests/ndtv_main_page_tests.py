@@ -9,7 +9,7 @@ class NdtvMainPageTests(unittest.TestCase):
     ndtv_main_page = NdtvMainPage()
 
     def setUp(self) -> None:
-        self.ndtv_main_page.register_driver("chrome", " 87.0.4280.88")
+        self.ndtv_main_page.register_driver(" 87.0.4280.88")
         self.ndtv_main_page.open('')
 
     def tearDown(self) -> None:

@@ -9,7 +9,7 @@ class NdtvOpenWeatherTests(unittest.TestCase):
     ndtv_weather_page = NdtvWeatherPage()
 
     def setUp(self) -> None:
-        self.ndtv_weather_page.register_driver("chrome", " 87.0.4280.88")
+        self.ndtv_weather_page.register_driver("87.0.4280.88")
         self.ndtv_weather_page.launch_page()
 
     def tearDown(self) -> None:
