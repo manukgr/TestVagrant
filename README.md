@@ -62,7 +62,7 @@ Directory structure of our current Templates
         ├── tests          <Tests to be added here>
     
         |    
-        ├── utils:                  <All utility modules >
+        ├── utils:                  <All utility modules here >
         |
         ├── .gitignore
         ├── conftest.py
